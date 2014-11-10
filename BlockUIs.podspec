@@ -1,4 +1,4 @@
-Pod::Spec.new do |spec|
+Pod::Spec.new do |s|
   spec.name         = 'BlockUIs'
   spec.version      = '1.0'
   spec.license      = { :type => 'MIT' }
@@ -6,6 +6,6 @@ Pod::Spec.new do |spec|
   spec.authors      = { 'Jannik Lorenz' => 'dev@janniklorenz.de' }
   spec.summary      = 'Subclass Basic UI Elements with Objective C Blocks'
   spec.source       = { :git => 'https://github.com/janniklorenz/BlockUIs', :tag => 'v1.0' }
-  spec.source_files = 'Reachability.{h,m}'
+  spec.source_files = '*.{h,m}'
   spec.framework    = 'SystemConfiguration'
 end
