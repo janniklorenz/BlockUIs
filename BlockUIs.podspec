@@ -1,4 +1,4 @@
-Pod::Spec.new do |s|
+Pod::Spec.new do |spec|
   spec.name         = 'BlockUIs'
   spec.version      = '1.0'
   spec.license      = { :type => 'MIT' }
