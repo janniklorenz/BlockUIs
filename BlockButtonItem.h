@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "IMSDefaults.h"
+// BlockUIBlocks
+#import "BlockUIBlocks.h"
 
 @interface BlockButtonItem : UIBarButtonItem
 
-@property (copy) ActionBlock selectionBlock;
+@property (copy) BlockUIActionBlock selectionBlock;
 
 @end

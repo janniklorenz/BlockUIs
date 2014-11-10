@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^ClickBlock)(int buttonIndex);
+// BlockUIBlocks
+#import "BlockUIBlocks.h"
 
 @interface BlockAlertView : UIAlertView <UIAlertViewDelegate>
 
-@property (copy) ClickBlock clickBlock;
+@property (copy) BlockUIClickBlock clickBlock;
 
 @end
