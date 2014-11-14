@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "BlockUIBlocks.h"
+
 @interface BlockTableItem : NSObject {
     
     // Cache
@@ -53,10 +55,10 @@
 #pragma mark - Blocks
 
 /** DidSelect Block */
-@property (copy) ActionBlock selectionBlock;
+@property (copy) BlockUIActionBlock selectionBlock;
 
 /** DidDelete Block */
-@property (copy) ActionBlock deleteBlock;
+@property (copy) BlockUIActionBlock deleteBlock;
 
 
 
