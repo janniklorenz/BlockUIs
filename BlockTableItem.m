@@ -43,64 +43,64 @@
 #pragma mark - Methods
 
 - (UITableViewCell *)getTableViewCellWithIdentifier:(NSString *)identifier {
-    if (!cell) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    if (!_cell) _cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     
     switch (self.style) {
         case BlockTableItemStyleDefault:{
-            cell.textLabel.text = _title;
-            cell.detailTextLabel.text = _detailTitle;
-            cell.imageView.image = _image;
+            _cell.textLabel.text = _title;
+            _cell.detailTextLabel.text = _detailTitle;
+            _cell.imageView.image = _image;
             
             break;
         }
             
         case BlockTableItemStyleSwitch:{
-            cell.textLabel.text = _title;
+            _cell.textLabel.text = _title;
             
             self.styleSwitch = [BlockSwitch new];
             
-            CGSize size = cell.contentView.frame.size;
+            CGSize size = _cell.contentView.frame.size;
             self.styleSwitch.frame = CGRectMake(size.width-self.styleSwitch.frame.size.width-(size.height-self.styleSwitch.frame.size.height)*0.5, (size.height-self.styleSwitch.frame.size.height)*0.5, self.styleSwitch.frame.size.width, self.styleSwitch.frame.size.height);
             self.styleSwitch.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-            [cell.contentView addSubview:self.styleSwitch];
+            [_cell.contentView addSubview:self.styleSwitch];
             
             break;
         }
             
         case BlockTableItemStyleButton:{
             
-            self.styleButtonLabel = [[UILabel alloc] initWithFrame:cell.contentView.frame];
+            self.styleButtonLabel = [[UILabel alloc] initWithFrame:_cell.contentView.frame];
             self.styleButtonLabel.text = _title;
             self.styleButtonLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             self.styleButtonLabel.textAlignment = NSTextAlignmentCenter;
             
-            [cell.contentView addSubview:self.styleButtonLabel];
+            [_cell.contentView addSubview:self.styleButtonLabel];
             
             break;
         }
             
         case BlockTableItemStyleEditing:{
-            cell.textLabel.text = _title;
+            _cell.textLabel.text = _title;
             
-            CGSize size = cell.contentView.frame.size;
+            CGSize size = _cell.contentView.frame.size;
             self.styleEditingTextField = [[BlockTextField alloc] initWithFrame:CGRectMake(size.width*0.5, size.height*0.1, size.width*0.5-size.height*0.1, size.height*0.8)];
             self.styleEditingTextField.text = _detailTitle;
             self.styleEditingTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
             
-            [cell.contentView addSubview:self.styleEditingTextField];
+            [_cell.contentView addSubview:self.styleEditingTextField];
             
             break;
         }
         case BlockTableItemStylePassword:{
-            cell.textLabel.text = _title;
+            _cell.textLabel.text = _title;
             
-            CGSize size = cell.contentView.frame.size;
+            CGSize size = _cell.contentView.frame.size;
             self.styleEditingTextField = [[BlockTextField alloc] initWithFrame:CGRectMake(size.width*0.5, size.height*0.1, size.width*0.5-size.height*0.1, size.height*0.8)];
             self.styleEditingTextField.secureTextEntry = YES;
             self.styleEditingTextField.text = _detailTitle;
             self.styleEditingTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
             
-            [cell.contentView addSubview:self.styleEditingTextField];
+            [_cell.contentView addSubview:self.styleEditingTextField];
             
             break;
         }
@@ -108,10 +108,10 @@
     
     switch (self.backgroundStyle) {
         case BlockTableItemBackgroundStyleClear:{
-            cell.backgroundColor = [UIColor clearColor];
-            UIView *v = [[UIView alloc] initWithFrame:cell.contentView.frame];
+            _cell.backgroundColor = [UIColor clearColor];
+            UIView *v = [[UIView alloc] initWithFrame:_cell.contentView.frame];
             v.backgroundColor = [UIColor clearColor];
-            cell.backgroundView = v;
+            _cell.backgroundView = v;
             
             break;
         }
@@ -121,12 +121,12 @@
     }
     
     
+    
     if (self.drawBlock) self.drawBlock(self);
     
+    _cell.accessoryType = _accessoryType;
     
-    cell.accessoryType = _accessoryType;
-    
-    return cell;
+    return _cell;
 }
 
 

@@ -27,12 +27,7 @@ enum BlockTableItemBackgroundStyle{
     BlockTableItemBackgroundStyleClear
 };
 
-@interface BlockTableItem : NSObject {
-    
-    // Cache
-    UITableViewCell *cell;
-    
-}
+@interface BlockTableItem : NSObject
 
 #pragma mark - Style
 
@@ -74,9 +69,6 @@ enum BlockTableItemBackgroundStyle{
 /**  Thumbnail Image */
 @property (readwrite) UIImage *image;
 
-/** Cell Background */
-@property (readwrite) UIColor *backgroundColor;
-
 /** Cell Height */
 @property (readwrite) int height;
 
@@ -116,6 +108,10 @@ enum BlockTableItemBackgroundStyle{
 - (void)reloadTableView;
 @property (readwrite) UITableView *table;
 @property (copy) BlockUIActionBlock reloadBlock;
+
+
+/** Cache */
+@property (readonly) UITableViewCell *cell;
 
 
 @end

@@ -24,7 +24,7 @@
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    _clickBlock((int)buttonIndex);
+    if (_clickBlock) _clickBlock((int)buttonIndex);
 }
 
 
