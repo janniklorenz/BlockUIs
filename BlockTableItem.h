@@ -10,8 +10,9 @@
 #import <UIKit/UIKit.h>
 
 #import "BlockUIBlocks.h"
+#import "BlockTextField.h"
 
-@class BlockSwitch;
+@class BlockSwitch, BlockTextField;
 
 enum BlockTableItemStyle{
     BlockTableItemStyleDefault,
@@ -38,6 +39,8 @@ enum BlockTableItemBackgroundStyle{
 @property (readwrite) BlockSwitch *styleSwitch;
 
 @property (readwrite) UILabel *styleButtonLabel;
+
+@property (readwrite) BlockTextField *styleEditingTextField;
 
 
 
