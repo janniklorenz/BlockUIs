@@ -78,7 +78,7 @@
     }
     
     
-    
+    if (self.drawBlock) self.drawBlock(self);
     
     
     cell.accessoryType = _accessoryType;

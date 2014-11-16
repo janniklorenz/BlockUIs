@@ -89,6 +89,9 @@ enum BlockTableItemBackgroundStyle{
 /** DidDelete Block */
 @property (copy) BlockUIActionBlock deleteBlock;
 
+/** Draw Block */
+@property (copy) BlockUIDrawBlock drawBlock;
+
 
 
 

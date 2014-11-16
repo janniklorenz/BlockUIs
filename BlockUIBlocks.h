@@ -6,8 +6,13 @@
 //
 //
 
+@class BlockTableItem;
+
 /** Void Return Block */
 typedef void (^BlockUIActionBlock)();
+
+/** TableItem Draw Block */
+typedef void (^BlockUIDrawBlock)(BlockTableItem *item);
 
 /** Button Index Return Block */
 typedef void (^BlockUIClickBlock)(int buttonIndex);
