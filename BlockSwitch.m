@@ -19,7 +19,7 @@
 }
 
 - (void)setState:(id)sender {
-    if (self.selectionBlock) self.selectionBlock();
+    if (self.changeBlock) self.changeBlock();
 }
 
 
