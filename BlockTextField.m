@@ -10,16 +10,26 @@
 
 @implementation BlockTextField
 
-- (id)init {
-    self = [super init];
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
-        [self addTarget:self action:@selector(setState:) forControlEvents:UIControlEventValueChanged];
+        [self addTarget:self action:@selector(setState:) forControlEvents:UIControlEventEditingChanged];
     }
     return self;
 }
 
-- (void)setSender:(id)sender {
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self addTarget:self action:@selector(setState:) forControlEvents:UIControlEventEditingChanged];
+    }
+    return self;
+}
+
+
+- (void)setState:(id)sender {
     if (self.changeBlock) self.changeBlock();
 }
+
 
 @end
