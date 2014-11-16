@@ -54,12 +54,35 @@
         }
             
         case BlockTableItemStyleSwitch:{
+            cell.textLabel.text = _title;
+            
             self.styleSwitch = [BlockSwitch new];
             
             CGSize size = cell.contentView.frame.size;
-            self.styleSwitch.frame = CGRectMake(size.width-self.styleSwitch.frame.size.width, (size.height-self.styleSwitch.frame.size.height)*0.5, self.styleSwitch.frame.size.width, self.styleSwitch.frame.size.height);
-            [cell.contentView addSubview:cell];
+            self.styleSwitch.frame = CGRectMake(size.width-self.styleSwitch.frame.size.width-(size.height-self.styleSwitch.frame.size.height)*0.5, (size.height-self.styleSwitch.frame.size.height)*0.5, self.styleSwitch.frame.size.width, self.styleSwitch.frame.size.height);
+            self.styleSwitch.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+            [cell.contentView addSubview:self.styleSwitch];
             
+            break;
+        }
+            
+        case BlockTableItemStyleButton:{
+            
+            self.styleButtonLabel = [[UILabel alloc] initWithFrame:cell.contentView.frame];
+            self.styleButtonLabel.text = _title;
+            self.styleButtonLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+            self.styleButtonLabel.textAlignment = NSTextAlignmentCenter;
+            
+            [cell.contentView addSubview:self.styleButtonLabel];
+            
+            break;
+        }
+            
+        case BlockTableItemStyleEditing:{
+            
+            
+            
+            break;
         }
     }
     

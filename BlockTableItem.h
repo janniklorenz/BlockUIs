@@ -37,6 +37,7 @@ enum BlockTableItemBackgroundStyle{
 
 @property (readwrite) BlockSwitch *styleSwitch;
 
+@property (readwrite) UILabel *styleButtonLabel;
 
 
 
