@@ -11,12 +11,33 @@
 
 #import "BlockUIBlocks.h"
 
+@class BlockSwitch;
+
+enum BlockTableItemStyle{
+    BlockTableItemStyleDefault,
+    BlockTableItemStyleEditing,
+    BlockTableItemStylePassword,
+    BlockTableItemStyleButton,
+    BlockTableItemStyleSwitch
+};
+
+enum BlockTableItemBackgroundStyle{
+    BlockTableItemStyleSwitchDefault,
+    BlockTableItemBackgroundStyleClear
+};
+
 @interface BlockTableItem : NSObject {
     
     // Cache
     UITableViewCell *cell;
     
 }
+
+#pragma mark - Style
+
+@property (readwrite) BlockSwitch *styleSwitch;
+
+
 
 
 #pragma mark - General Settings
@@ -26,6 +47,14 @@
 
 /** Description */
 @property (readwrite) NSString *detailTitle;
+
+/** Style */
+@property (readwrite) enum BlockTableItemStyle style;
+
+/** Backgound Style */
+@property (readwrite) enum BlockTableItemBackgroundStyle backgroundStyle;
+
+
 
 /** Editing */
 @property (readwrite) BOOL deleteable;

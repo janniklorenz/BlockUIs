@@ -8,6 +8,8 @@
 
 #import "BlockTableItem.h"
 
+#import "BlockSwitch.h"
+
 @implementation BlockTableItem
 
 #pragma mark - Inits
@@ -20,7 +22,6 @@
         self.deleteable = NO;
         self.moveable = NO;
         self.image = nil;
-//        self.backgroundColor = ;
         self.height = 44;
     }
     return self;
@@ -43,10 +44,42 @@
 - (UITableViewCell *)getTableViewCellWithIdentifier:(NSString *)identifier {
     if (!cell) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     
-    cell.textLabel.text = _title;
-    cell.detailTextLabel.text = _detailTitle;
+    switch (self.style) {
+        case BlockTableItemStyleDefault:{
+            cell.textLabel.text = _title;
+            cell.detailTextLabel.text = _detailTitle;
+            cell.imageView.image = _image;
+            
+            break;
+        }
+            
+        case BlockTableItemStyleSwitch:{
+            self.styleSwitch = [BlockSwitch new];
+            
+            CGSize size = cell.contentView.frame.size;
+            self.styleSwitch.frame = CGRectMake(size.width-self.styleSwitch.frame.size.width, (size.height-self.styleSwitch.frame.size.height)*0.5, self.styleSwitch.frame.size.width, self.styleSwitch.frame.size.height);
+            [cell.contentView addSubview:cell];
+            
+        }
+    }
     
-    cell.imageView.image = _image;
+    switch (self.backgroundStyle) {
+        case BlockTableItemBackgroundStyleClear:{
+            cell.backgroundColor = [UIColor clearColor];
+            UIView *v = [[UIView alloc] initWithFrame:cell.contentView.frame];
+            v.backgroundColor = [UIColor clearColor];
+            cell.backgroundView = v;
+            
+            break;
+        }
+        default:{
+            break;
+        }
+    }
+    
+    
+    
+    
     
     cell.accessoryType = _accessoryType;
     
