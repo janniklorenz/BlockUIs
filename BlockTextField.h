@@ -14,4 +14,6 @@
 
 @property (copy) BlockUIActionBlock changeBlock;
 
+@property (copy) BlockUIActionBlock endBlock;
+
 @end

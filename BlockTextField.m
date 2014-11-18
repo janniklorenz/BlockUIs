@@ -14,6 +14,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addTarget:self action:@selector(setState:) forControlEvents:UIControlEventEditingChanged];
+        [self addTarget:self action:@selector(setEnd:) forControlEvents:UIControlEventEditingDidEndOnExit];
     }
     return self;
 }
@@ -22,6 +23,7 @@
     self = [super init];
     if (self) {
         [self addTarget:self action:@selector(setState:) forControlEvents:UIControlEventEditingChanged];
+        [self addTarget:self action:@selector(setEnd:) forControlEvents:UIControlEventEditingDidEndOnExit];
     }
     return self;
 }
@@ -31,5 +33,8 @@
     if (self.changeBlock) self.changeBlock();
 }
 
+- (void)setEnd:(id)sender {
+    if (self.endBlock) self.endBlock();
+}
 
 @end

@@ -26,7 +26,7 @@
 
 
 - (void)push:(id)sender {
-    _selectionBlock(sender);
+    if (_selectionBlock) _selectionBlock(sender);
 }
 
 

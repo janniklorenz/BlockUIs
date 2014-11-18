@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "BlockUIBlocks.h"
+
 @class BlockTableItem;
 
 @interface BlockTableViewItems : NSObject
@@ -15,6 +17,9 @@
 @property (readonly) NSMutableArray *tableItems;
 
 @property (readonly) NSMutableArray *sectionHeader;
+
+/** Draw Block */
+@property (copy) BlockUIDrawBlock drawBlock;
 
 
 #pragma mark - Getter

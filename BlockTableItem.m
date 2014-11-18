@@ -43,10 +43,10 @@
 #pragma mark - Methods
 
 - (UITableViewCell *)getTableViewCellWithIdentifier:(NSString *)identifier {
-    if (!_cell) _cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    if (!_cell) _cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     
     switch (self.style) {
-        case BlockTableItemStyleDefault:{
+        default:{
             _cell.textLabel.text = _title;
             _cell.detailTextLabel.text = _detailTitle;
             _cell.imageView.image = _image;
