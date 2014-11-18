@@ -6,20 +6,15 @@
 //  Copyright (c) 2014 Intera. All rights reserved.
 //
 
-#import "BlockButtonItem.h"
+#import "BlockButton.h"
 
-@implementation BlockButtonItem
+@implementation BlockButton
 
-- (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action {
-    self = [super initWithBarButtonSystemItem:systemItem target:self action:@selector(push:)];
-    return self;
-}
-- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
-    self = [super initWithTitle:title style:style target:self action:@selector(push:)];
-    return self;
-}
-- (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
-    self = [super initWithImage:image style:style target:self action:@selector(push:)];
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self addTarget:self action:@selector(push:)forControlEvents:UIControlEventTouchUpInside];
+    }
     return self;
 }
 

@@ -11,7 +11,7 @@
 // BlockUIBlocks
 #import "BlockUIBlocks.h"
 
-@interface BlockButtonItem : UIBarButtonItem
+@interface BlockButton : UIButton
 
 @property (copy) BlockUIActionBlock selectionBlock;
 
