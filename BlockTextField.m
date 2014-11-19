@@ -30,11 +30,11 @@
 
 
 - (void)setState:(id)sender {
-    if (self.changeBlock) self.changeBlock();
+    if (self.changeBlock) self.changeBlock(self);
 }
 
 - (void)setEnd:(id)sender {
-    if (self.endBlock) self.endBlock();
+    if (self.endBlock) self.endBlock(self);
 }
 
 @end

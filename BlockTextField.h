@@ -12,8 +12,8 @@
 
 @interface BlockTextField : UITextField
 
-@property (copy) BlockUIActionBlock changeBlock;
+@property (copy) BlockUISelfBlock changeBlock;
 
-@property (copy) BlockUIActionBlock endBlock;
+@property (copy) BlockUISelfBlock endBlock;
 
 @end

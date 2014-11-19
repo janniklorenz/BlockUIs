@@ -83,7 +83,7 @@
             _cell.textLabel.text = _title;
             
             CGSize size = _cell.contentView.frame.size;
-            self.styleEditingTextField = [[BlockTextField alloc] initWithFrame:CGRectMake(size.width*0.5, size.height*0.1, size.width*0.5-size.height*0.1, size.height*0.8)];
+            self.styleEditingTextField = [[BlockTextField alloc] initWithFrame:CGRectMake(size.width*0.5, size.height*0.1, size.width*0.5-size.height*0.2, size.height*0.8)];
             self.styleEditingTextField.text = _detailTitle;
             self.styleEditingTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
             
@@ -95,7 +95,7 @@
             _cell.textLabel.text = _title;
             
             CGSize size = _cell.contentView.frame.size;
-            self.styleEditingTextField = [[BlockTextField alloc] initWithFrame:CGRectMake(size.width*0.5, size.height*0.1, size.width*0.5-size.height*0.1, size.height*0.8)];
+            self.styleEditingTextField = [[BlockTextField alloc] initWithFrame:CGRectMake(size.width*0.5, size.height*0.1, size.width*0.5-size.height*0.2, size.height*0.8)];
             self.styleEditingTextField.secureTextEntry = YES;
             self.styleEditingTextField.text = _detailTitle;
             self.styleEditingTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
@@ -131,7 +131,7 @@
 
 
 - (void)reloadTableView {
-    _reloadBlock();
+    if(_reloadBlock) _reloadBlock(self);
 }
 
 

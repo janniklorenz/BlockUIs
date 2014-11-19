@@ -80,13 +80,16 @@ enum BlockTableItemBackgroundStyle{
 #pragma mark - Blocks
 
 /** DidSelect Block */
-@property (copy) BlockUIActionBlock selectionBlock;
+@property (copy) BlockUISelfBlock selectionBlock;
+
+/** DidDeSelect Block */
+@property (copy) BlockUISelfBlock deselectionBlock;
 
 /** DidDelete Block */
-@property (copy) BlockUIActionBlock deleteBlock;
+@property (copy) BlockUISelfBlock deleteBlock;
 
 /** Draw Block */
-@property (copy) BlockUIDrawBlock drawBlock;
+@property (copy) BlockUISelfBlock drawBlock;
 
 
 
@@ -107,7 +110,7 @@ enum BlockTableItemBackgroundStyle{
 
 - (void)reloadTableView;
 @property (readwrite) UITableView *table;
-@property (copy) BlockUIActionBlock reloadBlock;
+@property (copy) BlockUISelfBlock reloadBlock;
 
 
 /** Cache */
