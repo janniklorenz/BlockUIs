@@ -11,6 +11,8 @@
 #import "BlockSwitch.h"
 #import "BlockTextField.h"
 
+#import "HelperTableViewCell.h"
+
 @implementation BlockTableItem
 
 #pragma mark - Inits
@@ -43,7 +45,7 @@
 #pragma mark - Methods
 
 - (UITableViewCell *)getTableViewCellWithIdentifier:(NSString *)identifier {
-    if (!_cell) _cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+    if (!_cell) _cell = [[HelperTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     
     switch (self.style) {
         default:{

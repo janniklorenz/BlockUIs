@@ -8,6 +8,8 @@
 
 #import "BlockTableViewItems.h"
 
+#import "BlockTableItem.h"
+
 @implementation BlockTableViewItems
 
 
@@ -70,7 +72,6 @@
     else {
         [[self.tableItems objectAtIndex:indexPath.section] addObject:item];
     }
-    
 }
 
 - (void)addItem:(BlockTableItem *)item toSection:(NSInteger)section {

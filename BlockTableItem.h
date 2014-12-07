@@ -12,7 +12,7 @@
 #import "BlockUIBlocks.h"
 #import "BlockTextField.h"
 
-@class BlockSwitch, BlockTextField;
+@class BlockSwitch, BlockTextField, HelperTableViewCell;
 
 enum BlockTableItemStyle{
     BlockTableItemStyleDefault,
@@ -52,6 +52,11 @@ enum BlockTableItemBackgroundStyle{
 
 /** Backgound Style */
 @property (readwrite) enum BlockTableItemBackgroundStyle backgroundStyle;
+
+
+/** Index (Set by the TableViewItems) */
+@property (readwrite) NSIndexPath *index;
+
 
 
 
@@ -114,7 +119,7 @@ enum BlockTableItemBackgroundStyle{
 
 
 /** Cache */
-@property (readonly) UITableViewCell *cell;
+@property (readonly) HelperTableViewCell *cell;
 
 
 @end

@@ -9,6 +9,8 @@
 #ifndef app2drive_Header_h
 #define app2drive_Header_h
 
+#import "HelperTableViewCell.h"
+
 #import "BlockAlertView.h"
 #import "BlockButton.h"
 #import "BlockButtonItem.h"
