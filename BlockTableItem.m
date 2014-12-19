@@ -47,6 +47,9 @@
 - (UITableViewCell *)getTableViewCellWithIdentifier:(NSString *)identifier {
     if (!_cell) _cell = [[HelperTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     
+    _cell.textLabel.font = [UIFont systemFontOfSize:16];
+    _cell.detailTextLabel.font = [UIFont systemFontOfSize:16];
+    
     switch (self.style) {
         default:{
             _cell.textLabel.text = _title;

@@ -96,6 +96,9 @@ enum BlockTableItemBackgroundStyle{
 /** Draw Block */
 @property (copy) BlockUISelfBlock drawBlock;
 
+@property (copy) BlockUISelfBlock nextBlock;
+@property (copy) BlockUISelfBlock backBlock;
+
 
 
 

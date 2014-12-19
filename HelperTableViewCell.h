@@ -10,4 +10,6 @@
 
 @interface HelperTableViewCell : UITableViewCell
 
+@property (readwrite) UIView *seperator;
+
 @end
