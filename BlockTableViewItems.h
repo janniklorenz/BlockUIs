@@ -18,6 +18,8 @@
 
 @property (readonly) NSMutableArray *sectionHeader;
 
+@property (readwrite) UIView *footherView;
+
 /** Draw Block */
 @property (copy) BlockUIDrawBlock drawBlock;
 

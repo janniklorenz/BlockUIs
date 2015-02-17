@@ -12,6 +12,6 @@
 
 @interface BlockSwitch : UISwitch
 
-@property (copy) BlockUIActionBlock changeBlock;
+@property (copy) BlockUISelfBlock changeBlock;
 
 @end

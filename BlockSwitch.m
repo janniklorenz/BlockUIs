@@ -18,8 +18,24 @@
     return self;
 }
 
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self addTarget:self action:@selector(setState:) forControlEvents:UIControlEventValueChanged];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self addTarget:self action:@selector(setState:) forControlEvents:UIControlEventValueChanged];
+    }
+    return self;
+}
+
 - (void)setState:(id)sender {
-    if (self.changeBlock) self.changeBlock();
+    if (self.changeBlock) self.changeBlock(self);
 }
 
 

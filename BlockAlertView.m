@@ -8,6 +8,10 @@
 
 #import "BlockAlertView.h"
 
+#import "DQAlertView.h"
+
+#define A2D_COLOR_GREEN [UIColor colorWithRed:124.0/255.0 green:172.0/255.0 blue:65.0/255.0 alpha:1.0]
+
 @implementation BlockAlertView
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
@@ -20,6 +24,19 @@
     }
     
     return self;
+    
+//    _alert = [[DQAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles];
+//    [_alert.otherButton setTitleColor:A2D_COLOR_GREEN forState:UIControlStateNormal];
+//    [_alert.cancelButton setTitleColor:A2D_COLOR_GREEN forState:UIControlStateNormal];
+//    __weak typeof(self) weakSelf = self;
+//    _alert.cancelButtonAction = ^(){
+//        if (weakSelf.clickBlock) weakSelf.clickBlock((int)0, weakSelf);
+//    };
+//    _alert.otherButtonAction = ^(){
+//        if (weakSelf.clickBlock) weakSelf.clickBlock((int)1, weakSelf);
+//    };
+    
+    return self;
 }
 
 
@@ -27,5 +44,8 @@
     if (_clickBlock) _clickBlock((int)buttonIndex, self);
 }
 
+//- (void)show {
+//    [_alert show];
+//}
 
 @end
